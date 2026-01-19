@@ -1,0 +1,22 @@
+directories:
+  output: release
+  buildResources: build
+appId: io.github.chickenpoo.survevwrapper
+productName: ChickenPoo's Amazing Survev Client
+files:
+  - filter:
+      - main.js
+      - preload.js
+      - mods/**/*
+      - skins/**/*
+      - package.json
+win:
+  target: nsis
+  forceCodeSigning: false
+publish:
+  - provider: github
+    owner: chickenpoo351
+    repo: chickenPoo-Amazing-Survev-Client
+electronDownload:
+  mirror: https://github.com/electron/electron/releases/download/
+electronVersion: 39.2.7
