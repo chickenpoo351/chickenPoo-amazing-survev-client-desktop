@@ -3,6 +3,7 @@ directories:
   buildResources: build
 appId: io.github.chickenpoo.survevwrapper
 productName: ChickenPoo's Amazing Survev Client
+artifactName: chickenpoo-survev-wrapper-setup-${version}.${ext}
 files:
   - filter:
       - main.js

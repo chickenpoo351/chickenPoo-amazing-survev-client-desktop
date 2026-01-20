@@ -1,6 +1,6 @@
 {
   "name": "chickenpoo-survev-wrapper",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "possibly first ever custom survev.io desktop client?",
   "main": "main.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "build": {
     "appId": "io.github.chickenpoo.survevwrapper",
     "productName": "ChickenPoo's Amazing Survev Client",
+    "artifactName": "chickenpoo-survev-wrapper-setup-${version}.${ext}",
     "files": [
       "main.js",
       "preload.js",
