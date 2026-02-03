@@ -472,6 +472,54 @@
         backpackTint: 0xdcdcdc,
       },
     },
+    beach: {
+      base: "http://127.0.0.1:31337/skins/Beach/player-base-01.svg",
+      hands: "http://127.0.0.1:31337/skins/Beach/player-hands-01.svg",
+      feet: "http://127.0.0.1:31337/skins/Beach/player-feet-01.svg",
+      backpack: "http://127.0.0.1:31337/skins/Beach/player-circle-base-01.svg",
+      tints: {
+        baseTint: 0xedca7e,
+        handTint: 0xfae5b6,
+        footTint: 0xfae5b6,
+        backpackTint: 0x7c995b,
+      },
+    },
+    coconut: {
+      base: "http://127.0.0.1:31337/skins/Coconut/player-base-01.svg",
+      hands: "http://127.0.0.1:31337/skins/Coconut/player-hands-01.svg",
+      feet: "http://127.0.0.1:31337/skins/Coconut/player-feet-01.svg",
+      backpack: "http://127.0.0.1:31337/skins/Coconut/player-circle-base-01.svg",
+      tints: {
+        baseTint: 0x765836,
+        handTint: 0x362d22,
+        footTint: 0xe9edf6,
+        backpackTint: 0xe9edf6,
+      },
+    },
+    tidal: {
+      base: "http://127.0.0.1:31337/skins/Tidal/player-base-02.svg",
+      hands: "http://127.0.0.1:31337/skins/Tidal/player-hands-02.svg",
+      feet: "http://127.0.0.1:31337/skins/Tidal/player-feet-02.svg",
+      backpack: "http://127.0.0.1:31337/skins/Tidal/player-circle-base-01.svg",
+      tints: {
+        baseTint: 0x1198ec,
+        handTint: 0xfdf5f1,
+        footTint: 0xfdf5f1,
+        backpackTint: 0x2178ae,
+      },
+    },
+    parrot : {
+      base: "http://127.0.0.1:31337/skins/Parrot/player-base-outfitParrotfish.svg",
+      hands: "http://127.0.0.1:31337/skins/Parrot/player-hands-02.svg",
+      feet: "http://127.0.0.1:31337/skins/Parrot/player-feet-02.svg",
+      backpack: "http://127.0.0.1:31337/skins/Parrot/player-circle-base-01.svg",
+      tints: {
+        baseTint: 0xffffff,
+        handTint: 0x3ac6c6,
+        footTint: 0x306790,
+        backpackTint: 0x37aeab,
+      },
+    },
   };
 
   // --- Send message to pageHook ---
@@ -741,6 +789,21 @@
         rarity: "Common",
         desc: "No business like snow business.",
         img: "http://127.0.0.1:31337/skins/Arctic/loot-shirt-outfitWhite.svg",
+      },
+      beach: {
+        name: "Beach Shored",
+        rarity: "Common",
+        desc: "Stranded!",
+        img: "",
+      },
+      coconut: {
+
+      },
+      tidal: {
+
+      },
+      parrot: {
+
       },
     };
 

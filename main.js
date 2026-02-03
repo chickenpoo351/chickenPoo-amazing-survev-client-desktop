@@ -123,14 +123,14 @@ async function createWindow() {
         console.log('[main.js ad block] blocking a ad site')
         return callback({ cancel: true });
       }
-      if (url === "https://survev.io/js/BOXMOoHD.js") {
+      if (url === "https://survev.io/js/BijPb4Co.js") {
         return callback({
-          redirectURL: "http://127.0.0.1:31337/mods/BOXMOoHD.patched.js"
+          redirectURL: "http://127.0.0.1:31337/mods/BijPb4Co.patched.js"
         });
       }
-      if (url === "https://survev.io/js/D5u1ACs0.js") {
+      if (url === "https://survev.io/js/C5UJTbIZ.js") {
         return callback({
-          redirectURL: "http://127.0.0.1:31337/mods/D5u1ACs0.patched.js"
+          redirectURL: "http://127.0.0.1:31337/mods/C5UJTbIZ.patched.js"
         });
       }
       if (details.url.includes("/auth/google")) {
