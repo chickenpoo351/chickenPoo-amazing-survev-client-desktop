@@ -794,16 +794,25 @@
         name: "Beach Shored",
         rarity: "Common",
         desc: "Stranded!",
-        img: "",
+        img: "http://127.0.0.1:31337/skins/Beach/loot-shirt-outfitBeachShored.svg",
       },
       coconut: {
-
+        name: "Coconut Frenzy",
+        rarity: "Common",
+        desc: "It's the coco fruit!",
+        img: "http://127.0.0.1:31337/skins/Coconut/loot-shirt-outfitCoconutFrenzy.svg",
       },
       tidal: {
-
+        name: "Tidal Wave",
+        rarity: "Common",
+        desc: "Send them to Davy Jones' locker.",
+        img: "http://127.0.0.1:31337/skins/Tidal/loot-shirt-outfitWave.svg",
       },
       parrot: {
-
+        name: "Parrotfish",
+        rarity: "Rare",
+        desc: "Show off your scales around the island. Coral, beware!",
+        img: "http://127.0.0.1:31337/skins/Parrot/loot-shirt-outfitParrotfish.svg",
       },
     };
 
