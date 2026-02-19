@@ -14,6 +14,7 @@ files:
 win:
   target: nsis
   forceCodeSigning: false
+  icon: chickenPoo-amazing-logo/chickenPoo-amazing-client-icon.png
 publish:
   - provider: github
     owner: chickenpoo351

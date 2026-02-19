@@ -1,6 +1,6 @@
 {
   "name": "chickenpoo-survev-wrapper",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "possibly first ever custom survev.io desktop client?",
   "main": "main.js",
   "scripts": {
@@ -34,7 +34,8 @@
     },
     "win": {
       "target": "nsis",
-      "forceCodeSigning": "false"
+      "forceCodeSigning": "false",
+      "icon": "chickenPoo-amazing-logo/chickenPoo-amazing-client-icon.png"
     },
     "publish": [
       {
