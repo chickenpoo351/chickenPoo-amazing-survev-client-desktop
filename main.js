@@ -187,3 +187,81 @@ ipcMain.on('restore-skin', (event) => {
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
+
+const SERVERS = {
+  NA: "wss://usr.mathsiscoolfun.com:8001/ptc",
+  EU: "wss://eur.mathsiscoolfun.com:8001/ptc",
+  ASIA: "wss://asr.mathsiscoolfun.com:8001/ptc",
+  SA: "wss://sa.mathsiscoolfun.com:8001/ptc"
+};
+
+let currentRegion = null;
+let latestPing = null;
+let sessionStop = null;
+
+function startSession(region) {
+  const url = SERVERS[region];
+  if (!url) return;
+
+  let ws = null;
+  let lastSend = 0;
+  let active = true;
+  const payload = new Uint8Array([0]).buffer;
+
+  function stop() {
+    active = false;
+    try { ws?.close(); } catch {}
+  }
+
+  function connect() {
+    ws = new WebSocket(url);
+    ws.binaryType = "arraybuffer";
+
+    ws.onmessage = () => {
+      if (!lastSend) return;
+      latestPing = Math.round(performance.now() - lastSend);
+    };
+
+    ws.onclose = () => {
+      if (active) {
+        latestPing = null;
+        setTimeout(connect, 1000);
+      }
+    };
+
+    ws.onerror = () => ws.close();
+  }
+
+  connect();
+
+  const ticker = setInterval(() => {
+    if (!active) {
+      clearInterval(ticker);
+      return;
+    }
+
+    if (ws?.readyState === WebSocket.OPEN) {
+      lastSend = performance.now();
+      ws.send(payload);
+    }
+  }, 200);
+
+  return stop;
+}
+
+ipcMain.on('SET_SERVER', (event, region) => {
+  const upperRegion = region?.toUpperCase();
+  if (!SERVERS[upperRegion]) return;
+
+  currentRegion = upperRegion;
+  latestPing = null;
+
+  sessionStop?.();
+  sessionStop = startSession(upperRegion);
+});
+
+ipcMain.handle('GET_PING', () => {
+  return currentRegion
+    ? { region: currentRegion, ping: latestPing }
+    : null;
+});

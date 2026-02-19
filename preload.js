@@ -10,6 +10,11 @@ contextBridge.exposeInMainWorld('survevCustomSkinMessenger', {
   }
 });
 
+contextBridge.exposeInMainWorld('pingGarbage', {
+  setServer: (region) => ipcRenderer.send('SET_SERVER', region),
+  getPing: () => ipcRenderer.invoke('GET_PING')
+})
+
 function setupAdBlocker() {
   const removeAds = () => {
     document
