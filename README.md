@@ -2,19 +2,19 @@
 
 # chickenPoo's Amazing Desktop Survev Client
 
-<img src="chickenPoo-amazing-logo/chickenPoo-amazing-client-icon-master.svg">
+<img src="chickenPoo-amazing-logo/chickenPoo-amazing-client-icon-master.svg" alt="chickenPoo's  custom Survev.io desktop client icon">
 
-My own custom Survev client aiming to be better than all others :o
+My own custom desktop Survev.io client aiming to be better than all others :o
 </div>
 
 - **Made by [chickenPoo](https://github.com/chickenpoo351)**
 - If you enjoy the project, please do consider starring the repo it helps more than you think thanks :D
-- This repo is **specifically for the desktop version of the client** click [here](https://github.com/chickenpoo351/chickenPoo-Amazing-Survev-Client) for the chrome extension version
+- This repo is **specifically for the desktop version of the Survev.io client** click [here](https://github.com/chickenpoo351/chickenPoo-Amazing-Survev-Client) for the chrome extension version
 
 # Why would you need this?
 
 I'm glad you asked! Here are the current capabilities of the client
-- **Custom Skins** so you can personalize your character like no other client
+- **Custom Survev Skins** so you can personalize your character like no other Survev.io client
 - **It's A Desktop Wrapper!** so you no longer have to open up your browser to play the game just launch the application
 - And I'm pretty sure this is a **one-of-a-kind** Survev.io client in more ways than one so thats cool too!
 
@@ -25,10 +25,10 @@ here's some cool previews showing off the skin Valiant Pineapple:
 # Previews
 
 <h3 align="center">Loadout preview</h3>
-<img src="presentation/loadout-presentation.gif">
+<img src="presentation/loadout-presentation.gif" alt="Loadout preview showing the skin Valiant Pineapple being used in the Survev.io client">
 
 <h3 align="center">In-game preview</h3>
-<img src="presentation/ingame-presentation.gif">
+<img src="presentation/ingame-presentation.gif" alt="In-Game preview showing the skin Valiant Pineapple being used in the Survev.io client">
 
 # Installation
 
