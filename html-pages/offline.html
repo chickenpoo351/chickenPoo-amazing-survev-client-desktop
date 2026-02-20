@@ -37,12 +37,11 @@
 
     <script>
         document.getElementById('reload').addEventListener('click', () => {
-            window.electronAPI.retryLoad()
+            window.pingGarbage.retry()
         })
 
-        // Optional: auto-retry when connection comes back
         window.addEventListener('online', () => {
-            window.electronAPI.retryLoad()
+            window.pingGarbage.retry()
         })
     </script>
 </body>

@@ -12,7 +12,8 @@ contextBridge.exposeInMainWorld('survevCustomSkinMessenger', {
 
 contextBridge.exposeInMainWorld('pingGarbage', {
   setServer: (region) => ipcRenderer.send('SET_SERVER', region),
-  getPing: () => ipcRenderer.invoke('GET_PING')
+  getPing: () => ipcRenderer.invoke('GET_PING'),
+  retry: () => ipcRenderer.send("retry-load") // not related to ping but I dont want to make another channel just for this :p
 })
 
 function setupAdBlocker() {
@@ -31,6 +32,10 @@ function setupAdBlocker() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  const isGame = location.hostname === "survev.io";
+  if (!isGame) {
+    return;
+  }
   const script2 = document.createElement('script');
   script2.src = 'http://127.0.0.1:31337/mods/pageHook.js';
   script2.onload = () => {

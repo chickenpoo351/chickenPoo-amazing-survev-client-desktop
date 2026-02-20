@@ -103,7 +103,16 @@ async function createWindow() {
     return { action: "allow" };
   });
   
-
+  win.webContents.on(
+    "did-fail-load",
+    (event, errorCode, errorDescription, validatedURL, isMainFrame) => {
+      if (!isMainFrame) return;
+      if (errorCode === -3) return;
+      if (validatedURL.startsWith("https://survev.io")) {
+        win.loadFile(path.join(__dirname, "html-pages/offline.html"));
+      }
+    }
+  );
 
   win.webContents.setUserAgent(
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
@@ -229,7 +238,6 @@ function startSession(region) {
       }
     };
 
-    ws.onerror = () => ws.close();
   }
 
   connect();
@@ -264,4 +272,11 @@ ipcMain.handle('GET_PING', () => {
   return currentRegion
     ? { region: currentRegion, ping: latestPing }
     : null;
+});
+
+ipcMain.on("retry-load", () => {
+  const win = BrowserWindow.getAllWindows()[0];
+  if (win && !win.isDestroyed()) {
+    win.loadURL("https://survev.io");
+  }
 });
