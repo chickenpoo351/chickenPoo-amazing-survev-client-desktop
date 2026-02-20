@@ -1,8 +1,12 @@
+# Survev.io Desktop Client
+
+This Survev.io desktop client is a custom standalone desktop wrapper for Survev.io that allows players to use custom skins in-game and enjoy a browser-free, application-based experience. Unlike the standard web version, this open-source Survev client runs as a dedicated desktop application for improved convenience, performance, and customization.
+
 <div align="center">
 
-# chickenPoo's Amazing Desktop Survev Client
+## chickenPoo's Amazing Desktop Survev Client
 
-<img src="chickenPoo-amazing-logo/chickenPoo-amazing-client-icon-master.svg" alt="chickenPoo's  custom Survev.io desktop client icon">
+<img src="chickenPoo-amazing-logo/chickenPoo-amazing-client-icon-master.svg" alt="Survev.io custom skin desktop client icon">
 
 My own custom desktop Survev.io client aiming to be better than all others :o
 </div>
@@ -11,7 +15,7 @@ My own custom desktop Survev.io client aiming to be better than all others :o
 - If you enjoy the project, please do consider starring the repo it helps more than you think thanks :D
 - This repo is **specifically for the desktop version of the Survev.io client** click [here](https://github.com/chickenpoo351/chickenPoo-Amazing-Survev-Client) for the chrome extension version
 
-# Why would you need this?
+## Why would you need this?
 
 I'm glad you asked! Here are the current capabilities of the client
 - **Custom Survev Skins** so you can personalize your character like no other Survev.io client
@@ -22,7 +26,7 @@ More features are on the way :D
 
 here's some cool previews showing off the skin Valiant Pineapple:
 
-# Previews
+## Previews
 
 <h3 align="center">Loadout preview</h3>
 <img src="presentation/loadout-presentation.gif" alt="Loadout preview showing the skin Valiant Pineapple being used in the Survev.io client">
@@ -30,9 +34,9 @@ here's some cool previews showing off the skin Valiant Pineapple:
 <h3 align="center">In-game preview</h3>
 <img src="presentation/ingame-presentation.gif" alt="In-Game preview showing the skin Valiant Pineapple being used in the Survev.io client">
 
-# Installation
+## Installation
 
-## Important! Read This First
+### Important! Read This First
 
 Before installing, please be aware of the following:
 
