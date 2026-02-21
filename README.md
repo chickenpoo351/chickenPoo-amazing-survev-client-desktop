@@ -2,6 +2,8 @@
 
 This Survev.io desktop client is a custom standalone desktop wrapper for Survev.io that allows players to use custom skins in-game and enjoy a browser-free, application-based experience. Unlike the standard web version, this open-source Survev client runs as a dedicated desktop application for improved convenience, performance, and customization.
 
+(*cough* *cough* ~~enough github SEO farming lol~~ *cough*)
+
 <div align="center">
 
 ## chickenPoo's Amazing Desktop Survev Client
@@ -42,7 +44,7 @@ Before installing, please be aware of the following:
 
 - This client currently only supports running on Windows machines
 
-- SmartScreen - upon installation of the client you may see a warning pop up thats something like this "Windows protected your PC". This happens because the application is considered new and such to Windows Defender. The project is open source, so you are free to review its code or build it yourself if you like
+- SmartScreen - upon installation of the client you may see a warning pop up thats something like this "Windows protected your PC". This happens because the application is considered new and not signed to Windows Defender. The project is open source, so you are free to review its code or build it yourself if you like
 
 - Login does not work. But if anyone has an idea as to how to fix this please do open a PR / issue it would very much help until then though we will have to play as a guest
 
