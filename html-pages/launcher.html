@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="launcher.css">
+    <title>chickenPoo's Survev Client</title>
+</head>
+
+<body>
+    <div class="launcher-container">
+        <div class="side-panel left-panel">
+            <h2>Currently Installed Version:</h2>
+            <div id="currently-installed-version">
+                <p>v1.1.2</p>
+                <ul>
+                    <li>Launcher page added</li>
+                    <li>FPS/Ping/Kill counter added</li>
+                    <li>Offline page added</li>
+                </ul>
+            </div>
+            <h2>Changelog</h2>
+            <div id="changelog">
+                <ul>
+                    <li>v1.1.2 - Launcher page, game counters, and offline page added</li>
+                    <li>v1.1.1 - App icon added</li>
+                    <li>v1.1.0 - Beach mode skins added!</li>
+                    <li>v1.0.6 - Routine update (again)</li>
+                    <li>v1.0.2/v1.0.5 - Routine update & auto-updates enabled</li>
+                    <li>v1.0.1 - Routine update</li>
+                    <li>v1.0.0 - Initial release</li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <h1>chickenPoo's Amazing Desktop Survev Client</h1>
+            <img src="../chickenPoo-amazing-logo/chickenPoo-amazing-client-icon-master.svg" id="client-icon">
+            <div id="go-to-game-div">
+                <button id="go-to-game" class="button-hover">
+                    <span id="button-text">Play Survev.io!</span>
+                    <span id="spinner" class="hidden"></span>
+                </button>
+            </div>
+            <p>Note from chickenPoo: This is still a work in progress so excuse the fact that this page barely does
+                anything right now lol (but this will have many more things once I work on the next update!)</p>
+            <p>
+                oops one more note lol basically to find the FPS/Ping/Kill counters 
+                you have to go to the settings page in survev.io there are toggles
+                there to turn them on and off (also excuse the fact they are kinda ugly
+                and there is no customization for them yet... im working on it :D)
+            </p>
+            <div class="settings">
+                <label>
+                    <input type="checkbox" id="game-start-location">
+                    Launch game immediately on startup
+                </label>
+            </div>
+        </div>
+        <div class="side-panel right-panel">
+            <h2>Support the Project</h2>
+            <p>If you enjoy this client, consider supporting it:</p>
+            <div class="support-buttons">
+                <button id="github-star">
+                    <img src="github-icon.svg" width="16px" height="16px">
+                    Star on GitHub
+                </button>
+            </div>
+            <p>It's free and helps out a ton!</p>
+            <p>As well as that perhaps consider sharing this with your friends:</p>
+            <div class="support-buttons">
+                <button id="discord-button">
+                    <img src="discord-icon.svg" width="16px" height="16px">
+                    Discord
+                </button>
+                <button id="reddit-button">
+                    <img src="reddit-icon.svg" height="16px" width="16px">
+                    Reddit
+                </button>
+                <button id="youtube-button">
+                    <img src="youtube-icon.svg" height="16px" width="16px">
+                    Youtube
+                </button>
+            </div>
+            <p>Found an Issue or have a feature idea?:</p>
+            <div class="support-buttons">
+                <button id="github-button">
+                    <img src="github-icon.svg" height="16px" width="16px">
+                    Report on GitHub
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="launcher.js"></script>
+</body>
+
+</html>

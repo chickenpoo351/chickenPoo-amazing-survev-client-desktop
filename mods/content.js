@@ -944,7 +944,7 @@
     position: fixed;
     top: 8px;
     left: 8px;
-    z-index: 2147483647;
+    z-index: 10;
     background: rgba(0,0,0,0.7);
     color: white;
     font: 12px monospace;
@@ -977,7 +977,7 @@
     position: fixed;
     top: 32px;
     left: 8px;
-    z-index: 2147483647;
+    z-index: 10;
     background: rgba(0,0,0,0.7);
     color: white;
     font: 12px monospace;
@@ -1068,7 +1068,7 @@
     position: fixed;
     top: 56px;
     left: 8px;
-    z-index: 2147483647;
+    z-index: 10;
     background: rgba(0,0,0,0.7);
     color: white;
     font: 12px monospace;
@@ -1192,4 +1192,14 @@
   fpsCheckBox.addEventListener('change', updateFPSVisibility);
   pingCheckBox.addEventListener('change', updatePingVisibility);
   killCheckBox.addEventListener('change', updateKillVisibility);
+
+  let testButton = document.createElement('a');
+  testButton.textContent = 'Return to Launcher'
+  testButton.id = 'return-to-launcher';
+  testButton.className = 'footer-after';
+  testButton.style.cursor = 'pointer';
+  document.getElementById('start-bottom-middle').appendChild(testButton);
+  testButton.addEventListener('click', () => {
+    window.launcherStuff.returnLauncher();
+  })
 })();

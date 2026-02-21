@@ -2,6 +2,16 @@ const { app, BrowserWindow, session, ipcMain, nativeTheme, shell } = require("el
 const path = require("path");
 const express = require("express");
 const { autoUpdater } = require("electron-updater");
+let store
+(async () => {
+  const { default: Store } = await import('electron-store');
+  store = new Store();
+})(); // im not migrating to ESM >:) but on a serious note hopefully this doesnt cause problems... I dont even know why I chose commonJS for this project... what was I thinking lmao
+
+ipcMain.handle('get-setting', (e, key) => store.get(key));
+ipcMain.handle('set-setting', (e, key, value) => {
+  store.set(key, value);
+});
 
 function isOAuthUrl(url) {
   try {
@@ -18,7 +28,6 @@ function isOAuthUrl(url) {
   }
 }
 
-
 let oauthInProgress = false;
 
 function openOAuth(url) {
@@ -31,8 +40,6 @@ function openOAuth(url) {
     oauthInProgress = false;
   }, 3000);
 }
-
-
 
 app.setPath(
   "userData",
@@ -166,9 +173,13 @@ async function createWindow() {
       }
     });
   }
+  const launchType = store.get('game-launch-type');
   
-
-  win.loadURL("https://survev.io");
+  if (launchType) {
+    win.loadURL('https://survev.io')
+  } else if (!launchType) {
+    win.loadFile(path.join(__dirname, "html-pages/launcher.html"));
+  }
 }
 
 nativeTheme.themeSource = 'dark';
@@ -280,3 +291,36 @@ ipcMain.on("retry-load", () => {
     win.loadURL("https://survev.io");
   }
 });
+
+ipcMain.on('go-to-game', (event) => {
+  const win = BrowserWindow.getAllWindows()[0];
+  if (win && !win.isDestroyed()) {
+    win.webContents.once('did-stop-loading', () => {
+      win.webContents.send('game-loaded');
+    });
+    win.loadURL("https://survev.io");
+  }
+});
+
+ipcMain.on('go-to-launcher', () => {
+  const win = BrowserWindow.getAllWindows()[0];
+  if (win && !win.isDestroyed()) {
+    win.loadFile(path.join(__dirname, "html-pages/launcher.html"))
+  }
+})
+
+ipcMain.on('go-to-github', () => {
+  shell.openExternal('https://github.com/chickenpoo351/chickenPoo-amazing-survev-client-desktop')
+})
+
+ipcMain.on('go-to-youtube', () => {
+  shell.openExternal('https://youtube.com')
+})
+
+ipcMain.on('go-to-reddit', () => {
+  shell.openExternal('https://reddit.com')
+})
+
+ipcMain.on('go-to-discord', () => {
+  shell.openExternal('https://discord.com')
+})

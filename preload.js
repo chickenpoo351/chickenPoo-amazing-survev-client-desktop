@@ -16,6 +16,18 @@ contextBridge.exposeInMainWorld('pingGarbage', {
   retry: () => ipcRenderer.send("retry-load") // not related to ping but I dont want to make another channel just for this :p
 })
 
+contextBridge.exposeInMainWorld('launcherStuff', {
+  loadSurvev: () => ipcRenderer.send("go-to-game"),
+  get: (key) => ipcRenderer.invoke('get-setting', key),
+  set: (key, value) => ipcRenderer.invoke('set-setting', key, value),
+  returnLauncher: () => ipcRenderer.send("go-to-launcher"),
+  onGameLoaded: (callback) => ipcRenderer.on("game-loaded", callback),
+  openGithub: () => ipcRenderer.send("go-to-github"),
+  openYoutube: () => ipcRenderer.send("go-to-youtube"),
+  openReddit: () => ipcRenderer.send('go-to-reddit'),
+  openDiscord: () => ipcRenderer.send("go-to-discord")
+})
+
 function setupAdBlocker() {
   const removeAds = () => {
     document
