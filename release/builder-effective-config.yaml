@@ -11,6 +11,7 @@ files:
       - mods/**/*
       - skins/**/*
       - package.json
+      - html-pages/**/*
 win:
   target: nsis
   forceCodeSigning: false
