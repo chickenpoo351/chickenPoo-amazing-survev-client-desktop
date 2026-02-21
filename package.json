@@ -1,6 +1,6 @@
 {
   "name": "chickenpoo-survev-wrapper",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "possibly first ever custom survev.io desktop client?",
   "main": "main.js",
   "scripts": {
@@ -29,7 +29,8 @@
       "mods/**/*",
       "skins/**/*",
       "package.json",
-      "html-pages/**/*"
+      "html-pages/**/*",
+      "chickenPoo-amazing-logo/**/*"
     ],
     "directories": {
       "output": "release"

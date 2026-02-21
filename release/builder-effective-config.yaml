@@ -12,6 +12,7 @@ files:
       - skins/**/*
       - package.json
       - html-pages/**/*
+      - chickenPoo-amazing-logo/**/*
 win:
   target: nsis
   forceCodeSigning: false
