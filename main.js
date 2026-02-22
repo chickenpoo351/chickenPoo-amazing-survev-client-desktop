@@ -95,6 +95,11 @@ async function createWindow() {
     },
   });
 
+  win.on('close', (e) => {
+    e.preventDefault();
+    win.destroy();
+  });
+
   win.webContents.on("will-navigate", (event, url) => {
     if (isOAuthUrl(url)) {
       event.preventDefault();
