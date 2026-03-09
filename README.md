@@ -46,7 +46,7 @@ Before installing, please be aware of the following:
 
 - SmartScreen - upon installation of the client you may see a warning pop up thats something like this "Windows protected your PC". This happens because the application is considered new and not signed to Windows Defender. The project is open source, so you are free to review its code or build it yourself if you like
 
-- Login does not work. But if anyone has an idea as to how to fix this please do open a PR / issue it would very much help until then though we will have to play as a guest
+- Login support - Discord login works, however Google login does not currently work. if you have ideas as to how to fix the Google login, please feel free to open a issue or PR. Until then Discord login is the only way you can login.
 
 If you prefer a browser based option, then click the link below for the extension version repo
 
