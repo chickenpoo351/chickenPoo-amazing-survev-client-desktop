@@ -59,6 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(script2);
   
   const script = document.createElement('script');
+  script.type = 'module';
   script.src = 'http://127.0.0.1:31337/mods/content.js';
   script.onload = () => {
     console.log("[preload] content.js injected successfully.");
