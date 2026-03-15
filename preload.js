@@ -78,6 +78,16 @@ window.addEventListener("DOMContentLoaded", () => {
     console.error("[preload] Error loading return-button.js:", error);
   };
   document.body.appendChild(script3);
+
+  const script4 = document.createElement('script');
+  script4.src = 'http://127.0.0.1:31337/mods/counters/counter-main.js';
+  script4.onload = () => {
+    console.log("[preload] counter-main.js injected successfully.");
+  };
+  script4.onerror = (error) => {
+    console.error("[preload] Error loading counter-main.js:", error);
+  };
+  document.body.appendChild(script4);
   console.log('setting up ad blocker');
   setupAdBlocker();  
 });
