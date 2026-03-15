@@ -68,6 +68,16 @@ window.addEventListener("DOMContentLoaded", () => {
     console.error("[preload] Error loading content.js:", error);
   };
   document.body.appendChild(script);
+  
+  const script3 = document.createElement('script');
+  script3.src = 'http://127.0.0.1:31337/mods/return-button.js';
+  script3.onload = () => {
+    console.log("[preload] return-button.js injected successfully.");
+  };
+  script3.onerror = (error) => {
+    console.error("[preload] Error loading return-button.js:", error);
+  };
+  document.body.appendChild(script3);
   console.log('setting up ad blocker');
   setupAdBlocker();  
 });
