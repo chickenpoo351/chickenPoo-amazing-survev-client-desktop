@@ -43,51 +43,38 @@ function setupAdBlocker() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
   const isGame = location.hostname === "survev.io";
   if (!isGame) {
     return;
   }
-  const script2 = document.createElement('script');
-  script2.src = 'http://127.0.0.1:31337/mods/pageHook.js';
-  script2.onload = () => {
-    console.log("[preload] pageHook.js injected successfully.");
-  };
-  script2.onerror = (error) => {
-    console.error("[preload] Error loading pageHook.js:", error);
-  };
-  document.body.appendChild(script2);
-  
-  const script = document.createElement('script');
-  script.type = 'module';
-  script.src = 'http://127.0.0.1:31337/mods/content.js';
-  script.onload = () => {
-    console.log("[preload] content.js injected successfully.");
-  };
-  script.onerror = (error) => {
-    console.error("[preload] Error loading content.js:", error);
-  };
-  document.body.appendChild(script);
-  
-  const script3 = document.createElement('script');
-  script3.src = 'http://127.0.0.1:31337/mods/return-button.js';
-  script3.onload = () => {
-    console.log("[preload] return-button.js injected successfully.");
-  };
-  script3.onerror = (error) => {
-    console.error("[preload] Error loading return-button.js:", error);
-  };
-  document.body.appendChild(script3);
 
-  const script4 = document.createElement('script');
-  script4.src = 'http://127.0.0.1:31337/mods/counters/counter-main.js';
-  script4.onload = () => {
-    console.log("[preload] counter-main.js injected successfully.");
-  };
-  script4.onerror = (error) => {
-    console.error("[preload] Error loading counter-main.js:", error);
-  };
-  document.body.appendChild(script4);
+  function injectScript(src, consName, type = "text/javascript") {
+    const s = document.createElement('script');
+    s.src = src;
+    if (type === "module") s.type = "module";
+    s.onload = () => {
+      console.log(`${consName}.js injected`)
+    }
+    s.onerror = (error) => {
+      console.error(`error loading ${consName}`, error)
+    }
+    document.body.appendChild(s)
+  }
+
+  const [skinsEnabled, countersEnabled] = await Promise.all([
+    ipcRenderer.invoke('get-setting', 'in-game-skins'),
+    ipcRenderer.invoke('get-setting', "in-game-counters")
+  ]);
+
+  injectScript("http://127.0.0.1:31337/mods/return-button.js", "return-button");
+  if (!skinsEnabled) {
+    injectScript("http://127.0.0.1:31337/mods/pageHook.js", "pagehook");
+    injectScript('http://127.0.0.1:31337/mods/content.js', "content", "module");
+  }
+  if (!countersEnabled) {
+    injectScript('http://127.0.0.1:31337/mods/counters/counter-main.js', "counter-main");
+  }
   console.log('setting up ad blocker');
-  setupAdBlocker();  
+  setupAdBlocker();
 });

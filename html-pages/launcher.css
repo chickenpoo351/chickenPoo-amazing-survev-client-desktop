@@ -181,3 +181,21 @@ h1 {
     flex-direction: column;
     gap: 12px;
 }
+
+.highlight {
+    font-weight: 700;
+    color: gold;
+}
+
+.version-title {
+    cursor: pointer;
+    padding: 6px 0
+}
+
+.version-title:hover {
+    text-decoration: underline;
+}
+
+#changelog {
+    gap: 20px;
+}

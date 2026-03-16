@@ -8,6 +8,20 @@ let store
   store = new Store();
 })(); // im not migrating to ESM >:) but on a serious note hopefully this doesnt cause problems... I dont even know why I chose commonJS for this project... what was I thinking lmao
 
+const appLock = app.requestSingleInstanceLock();
+
+if (!appLock) {
+  app.quit();
+} else {
+  app.on("second-instance", () => {
+    const win = BrowserWindow.getAllWindows()[0];
+    if (win) {
+      if (win.isMinimized()) win.restore();
+      win.focus();
+    }
+  });
+}
+
 ipcMain.handle('get-setting', (e, key) => store.get(key));
 ipcMain.handle('set-setting', (e, key, value) => {
   store.set(key, value);
@@ -106,7 +120,7 @@ async function createWindow() {
       openOAuth(url)
     }
   });
-  
+
   win.webContents.setWindowOpenHandler(({ url }) => {
     if (isOAuthUrl(url)) {
       openOAuth(url)
@@ -114,7 +128,7 @@ async function createWindow() {
     }
     return { action: "allow" };
   });
-  
+
   win.webContents.on(
     "did-fail-load",
     (event, errorCode, errorDescription, validatedURL, isMainFrame) => {
@@ -135,7 +149,6 @@ async function createWindow() {
     { urls: ["*://*/*"] },
     (details, callback) => {
       const url = details.url;
-
       if (
         url.includes("fuseplatform.net") ||
         url.includes("cloudflareinsights.com") ||
@@ -144,28 +157,30 @@ async function createWindow() {
         console.log('[main.js ad block] blocking a ad site')
         return callback({ cancel: true });
       }
-      if (url === "https://survev.io/js/B-kEZpKo.js") {
-        return callback({
-          redirectURL: "http://127.0.0.1:31337/mods/B-kEZpKo.patched.js"
-        });
-      }
-      if (url === "https://survev.io/js/DVXV2jrb.js") {
-        return callback({
-          redirectURL: "http://127.0.0.1:31337/mods/DVXV2jrb.patched.js"
-        });
+      if (!store.get('in-game-skins')) {
+        if (url === "https://survev.io/js/C1eaexTj.js") {
+          return callback({
+            redirectURL: "http://127.0.0.1:31337/mods/C1eaexTj.patched.js"
+          });
+        }
+        if (url === "https://survev.io/js/CTPOAy90.js") {
+          return callback({
+            redirectURL: "http://127.0.0.1:31337/mods/CTPOAy90.patched.js"
+          });
+        }
       }
       if (details.url.includes("/auth/google")) {
         openOAuth(details.url);
-      
+
         setImmediate(() => {
           if (!win.isDestroyed()) {
             win.loadURL("https://survev.io");
           }
         });
-      
+
         return callback({ cancel: true });
       }
-      
+
 
       callback({});
     }
@@ -179,7 +194,7 @@ async function createWindow() {
     });
   }
   const launchType = store.get('game-launch-type');
-  
+
   if (launchType) {
     win.loadURL('https://survev.io')
   } else if (!launchType) {
@@ -235,7 +250,7 @@ function startSession(region) {
 
   function stop() {
     active = false;
-    try { ws?.close(); } catch {}
+    try { ws?.close(); } catch { }
   }
 
   function connect() {
