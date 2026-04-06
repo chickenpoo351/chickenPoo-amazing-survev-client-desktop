@@ -1,8 +1,8 @@
-version: 1.1.8
+version: 1.1.9
 files:
-  - url: chickenpoo-survev-wrapper-setup-1.1.8.exe
-    sha512: NmxWkfv2cWLTaAcapePmUlcXm7jL79qrNRebXA7ZxwtXUiVUMqiJq/ICnq7cw+YLs31T6yHhbaWmXmG+DgZj+Q==
-    size: 97281283
-path: chickenpoo-survev-wrapper-setup-1.1.8.exe
-sha512: NmxWkfv2cWLTaAcapePmUlcXm7jL79qrNRebXA7ZxwtXUiVUMqiJq/ICnq7cw+YLs31T6yHhbaWmXmG+DgZj+Q==
-releaseDate: '2026-04-01T15:22:05.577Z'
+  - url: chickenpoo-survev-wrapper-setup-1.1.9.exe
+    sha512: RnN0db83xi3J/g4OQbsQkKgWpE/pXEnojPFXR3Q4/Qp/dJd2RsyQoLGRnjT47HQacOv607IL+Yt6H2d9onUFkw==
+    size: 97281627
+path: chickenpoo-survev-wrapper-setup-1.1.9.exe
+sha512: RnN0db83xi3J/g4OQbsQkKgWpE/pXEnojPFXR3Q4/Qp/dJd2RsyQoLGRnjT47HQacOv607IL+Yt6H2d9onUFkw==
+releaseDate: '2026-04-06T14:47:28.390Z'

@@ -158,14 +158,14 @@ async function createWindow() {
         return callback({ cancel: true });
       }
       if (!store.get('in-game-skins')) {
-        if (url === "https://survev.io/js/BKGPahYu.js") {
+        if (url === "https://survev.io/js/C1GZU2Jc.js") {
           return callback({
-            redirectURL: "http://127.0.0.1:31337/mods/BKGPahYu.patched.js"
+            redirectURL: "http://127.0.0.1:31337/mods/C1GZU2Jc.patched.js"
           });
         }
-        if (url === "https://survev.io/js/ByNLpQrx.js") {
+        if (url === "https://survev.io/js/JmvVcZjL.js") {
           return callback({
-            redirectURL: "http://127.0.0.1:31337/mods/ByNLpQrx.patched.js"
+            redirectURL: "http://127.0.0.1:31337/mods/JmvVcZjL.patched.js"
           });
         }
       }
