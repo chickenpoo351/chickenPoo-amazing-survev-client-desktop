@@ -1,3 +1,6 @@
+# (Temp) Update:
+So erm the minifier/obfuscator of the game files seems to have changed the structure of the code quite a bit so I am still working on you know getting that working... will probably need a few more days... thanks for waiting! :D
+
 # Survev.io Desktop Client
 
 This Survev.io desktop client is a custom standalone desktop wrapper for Survev.io that allows players to use custom skins in-game and enjoy a browser-free, application-based experience. Unlike the standard web version, this open-source Survev client runs as a dedicated desktop application for improved convenience, performance, and customization.
